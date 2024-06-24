@@ -7,6 +7,8 @@
 
 use rand::Rng;
 
+mod display;
+
 #[cfg_attr(test, derive(Debug, PartialEq))]
 pub struct Function {
     pub variable: Variable,
@@ -52,7 +54,7 @@ pub struct AliasLink(pub String);
 
 // -----------------------------------------------------------------------------------------------------------
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub enum Token {
     Bound(String),
     Free,
